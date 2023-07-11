@@ -1,5 +1,6 @@
 import React from 'react'
-import { createRoot } from 'react-dom'
+import { createRoot } from 'react-dom/client'
+import { Container, Button, Link, CssBaseline } from '@mui/material'
 
 interface TJoke {
   setup: string
@@ -30,8 +31,46 @@ const App = () => {
     fetchRandomJoke().then((joke) => setJoke(joke))
   }, [])
 
-  return joke ? <Joke {...joke} /> : <p>Loading your joke...</p>
+  return (
+    <>
+      <CssBaseline />
+      <Container>
+        <Container
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}
+        >
+          <Button
+            onClick={() => null}
+            variant="contained"
+            disableElevation
+          >
+            Get a New Random Joke
+          </Button>
+          <Link href="https://github.com/15Dkatz/official_joke_api">
+            View API Docs
+          </Link>
+        </Container>
+        <Container
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column'
+          }}
+        >
+          {
+            joke
+              ? <Joke {...joke} />
+              : <p>Loading your joke...</p>
+          }
+        </Container>
+      </Container>
+    </>
+  )
 }
 
-const root = createRoot(document.getElementById("app-root"))
+const root = createRoot(document.getElementById("app-root")!)
 root.render(<App />)
