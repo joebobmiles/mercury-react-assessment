@@ -17,13 +17,16 @@ const fetchRandomJoke = async (): Promise<TJoke> => {
   }
 }
 
-const Joke = ({ setup, punchline }: TJoke) => (
-  <>
-    <p>{setup}</p>
-    <p>{punchline}</p>
-  </>
-)
+const RandomJoke = async () => {
+  const { setup, punchline } = await fetchRandomJoke()
 
+  return (
+    <>
+      <p>{setup}</p>
+      <p>{punchline}</p>
+    </>
+  )
+}
 const App = () => {
   const [ joke, setJoke ] = React.useState<TJoke | null>(null)
 
@@ -63,7 +66,7 @@ const App = () => {
         >
           {
             joke
-              ? <Joke {...joke} />
+              ? <RandomJoke />
               : <p>Loading your joke...</p>
           }
         </Container>

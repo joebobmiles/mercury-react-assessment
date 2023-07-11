@@ -86,6 +86,25 @@ There are still options, however:
   shows the header if a child throws an error.
   * This means that the Layout component is responsible for fetching the new
     joke and maintaining the application's state.
+  * Issue is that the Layout component _can't_ make the request, since the error
+    boundary can't also throw the error.
+* Other option is to trigger the current Joke component to unmount and then
+  mount a new Joke component when the button is pressed.
+  * Only issue is that I'm not 100% sure if that's possible.
+    * We could pass down some state that we twiddle whenever we want the Joke
+      to re-render.
+    * Could we give it a key prop that changes whenever the random joke button
+      is pressed?
+  * Especially since, for performance, I'd prefer not to trigger a re-render
+    of the entire Layout, only part of it.
+
+The next issue now is that I don't know how to use Suspense in this case.
+Functional components can't return a Promise, which means we just need to await
+in a useEffect... I think.
+
+Did some research, and it looks like I can't use Suspense like I thought I could
+with _only_ a plain fetch. Annoyingly, it seems like Suspense requires you use
+"Suspense-enabled" code, whatever that means.
 
 ### Problem 3
 
