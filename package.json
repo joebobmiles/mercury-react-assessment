@@ -1,0 +1,9 @@
+{
+  "name": "@joebobmiles/mercury-react-assessment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "Joseph R Miles <joe@jrm.dev>",
+  "license": "ISC"
+}
