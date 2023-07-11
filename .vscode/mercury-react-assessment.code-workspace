@@ -3,5 +3,10 @@
 		{
 			"path": ".."
 		}
-	]
+	],
+  "settings": {
+    "standard.enable": true,
+    "standard.autoFixOnSave": true,
+    "standard.engine": "ts-standard"
+  }
 }
