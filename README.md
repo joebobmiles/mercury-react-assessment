@@ -1,3 +1,5 @@
+[![wakatime](https://wakatime.com/badge/user/fae05115-5e70-4df1-90c0-1a981cbdf216/project/3ca7e830-cda6-49ee-9f8b-b2d399bccbde.svg)](https://wakatime.com/badge/user/fae05115-5e70-4df1-90c0-1a981cbdf216/project/3ca7e830-cda6-49ee-9f8b-b2d399bccbde)
+
 # Goals
 
 ## Primary Goal
