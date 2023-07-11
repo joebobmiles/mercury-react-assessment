@@ -23,7 +23,7 @@ Show what they are looking for:
 
 # Tasks
 
-- [ ] Write a function that fetches a joke from the API.
+- [X] Write a function that fetches a joke from the API.
 - [ ] Create Layout component
   - [ ] Add a green, rounded button that says "Get A New Random Joke"
   - [ ] Add a link to the API docs
